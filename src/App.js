@@ -1,10 +1,22 @@
+import Nav from "./Components/NavItems/Nav";
+import Home from "./Components/BodyComponents/Home";
+import About from "./Components/BodyComponents/About";
+import Skills from "./Components/BodyComponents/Skills";
+import Projects from "./Components/BodyComponents/Projects";
+import { Route, Switch} from "react-router-dom";
 
 
 const App = () => {
- 
+
   return (
     <>
-     <p className="bg-blue-500" >read me</p>
+      <Nav />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/projects' component={Projects} />
+        <Route path='/skills' component={Skills} />
+      </Switch>
     </>
   );
 }
