@@ -1,0 +1,85 @@
+
+.home-animation{
+    height: 100vh;
+}
+
+@keyframes pulse-animation {
+    0% {
+        background: linear-gradient(-20deg,orange 10%,black 90%);
+    }
+    5% {
+        background: linear-gradient(-40deg,orange 10%,black 90%);
+    }
+    10% {
+        background: linear-gradient(-60deg,orange 10%,black 90%);
+    }
+    15% {
+        background: linear-gradient(-80deg,orange 10%,black 90%);
+    }
+    20% {
+        background: linear-gradient(-100deg,orange 10%,black 90%);
+    }
+   
+    25% {
+        background: linear-gradient(-120deg,orange 10%,black 90%);
+    }
+    30% {
+        background: linear-gradient(-140deg,orange 10%,black 90%);
+    }
+    35% {
+        background: linear-gradient(-160deg,orange 10%,black 90%);
+    }
+    40% {
+        background: linear-gradient(-180deg,orange 10%,black 90%);
+    }
+
+    45% {
+        background: linear-gradient(-200deg,orange 10%,black 90%);
+    }
+
+    50% {
+        background: linear-gradient(-220deg,orange 10%,black 90%);
+    }
+    55% {
+        background: linear-gradient(-240deg,orange 10%,black 90%);
+    }
+    
+    60% {
+        background: linear-gradient(-260deg,orange 10%,black 90%);
+    }
+    65% {
+        background: linear-gradient(-280deg,orange 10%,black 90%);
+    }
+    70% {
+        background: linear-gradient(-300deg,orange 10%,black 90%);
+    }
+    75% {
+        background: linear-gradient(-320deg,orange 10%,black 90%);
+    }
+    80% {
+        background: linear-gradient(-330deg,orange 10%,black 90%);
+    }
+    85% {
+        background: linear-gradient(-340deg,orange 10%,black 90%);
+    }
+    90% {
+        background: linear-gradient(-360deg,orange 10%,black 90%);
+    }
+    95% {
+        background: linear-gradient(-10deg,orange 10%,black 90%);
+    }
+    100% {
+        background: linear-gradient(-20deg,orange 10%,black 90%);
+    }
+    
+  }
+
+  
+    .home-animation {
+      animation-name: pulse-animation;
+      animation-duration:20s;
+      animation-timing-function:ease-in-out;
+      animation-iteration-count:infinite;
+      
+    }
+  

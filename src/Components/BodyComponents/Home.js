@@ -1,7 +1,18 @@
 
-const Home = ()=>{
+import './home.css'
+
+const Home = () => {
     return <>
-     <p className="container mt-11">Home there</p>
+        <main className='home-animation '>
+            <div className="container py-12 ">
+                <p className='text-white text-6xl font-bold mt-36 font-sans'>FULLSTACK DEVELOPER</p>
+                <div className='mt-44 text-white font-sans font-semibold'>
+                    <p>Hey! I am Isaac</p>
+                    <p>I build Interactive Websites and web applications</p>
+                    <p>that run across platforms and devices</p>
+                </div>
+            </div>
+        </main>
     </>
 }
 

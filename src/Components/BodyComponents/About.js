@@ -1,7 +1,11 @@
 
-const About = ()=>{
+const About = () => {
     return <>
-     <p className="container mt-11">This is the container of all that is about me</p>
+        <main className="bg-black h-screen">
+            <div className="container py-12">
+                <p className="mt-36 text-white">This is the container of all that is about me</p>
+            </div>
+        </main>
     </>
 }
 
