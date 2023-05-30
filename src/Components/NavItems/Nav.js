@@ -22,8 +22,8 @@ const Nav = () => {
                 </div>
                 <FaBars className='text-white  font-semibold mt-3 md:hidden text-xl w-15 cursor-pointer' onClick={()=>setShowModal(!showModal)} />
             </div>
-            {showModal && <div className=' container  flex place-content-end' onClick={()=>setShowModal(!showModal)}>
-                <div className=' mod-cov ml-5 font-semibold mt-1 text-white md:hidden text-center'>
+            {showModal && <div className=' container  flex place-content-end'>
+                <div className=' mod-cov ml-5 font-semibold mt-1 text-black text-center fixed z-30 bg-white rounded shadow-2xl md:hidden ' onClick={()=>setShowModal(!showModal)}>
                     <Link to='/'> <p className='px-1 h-8  '> Home </p></Link>
                     <Link to='/about'> <p className='ml-1 px-1  h-8 '> About </p></Link>
                     <Link to='/skills'><p className='ml-1 px-1  h-8 '> Skills </p></Link>

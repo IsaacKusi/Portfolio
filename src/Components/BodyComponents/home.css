@@ -74,7 +74,6 @@
     
   }
 
-  
     .home-animation {
       animation-name: pulse-animation;
       animation-duration:20s;
@@ -87,4 +86,6 @@
         margin-right: -1.3rem;
         
     }
+
+   
   

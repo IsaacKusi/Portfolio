@@ -1,9 +1,13 @@
 
+import './about.css'
+
 const About = () => {
     return <>
-        <main className="bg-black h-screen">
+        <main className="bg-[#2a2b36] h-screen">
             <div className="container py-12">
-                <p className="mt-36 text-white">This is the container of all that is about me</p>
+                <div  className="mt-20 text-white rounded bg-[#11121a] about">
+                <p>This is the container of all that is about me</p>
+                </div>
             </div>
         </main>
     </>
