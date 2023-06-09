@@ -16,7 +16,7 @@ const Nav = () => {
                 </div>
                 <div className=' hidden md:flex md:justify-between md:items-center font-semibold mt-1 text-white '>
                     <Link to='/'> <p className='px-1 h-8 '> Home </p></Link>
-                    <Link to='/about'> <p className='ml-1 px-1  h-8'> About </p></Link>
+                    <Link to='/about'> <p className='ml-1 px-1  h-8 ' > About </p></Link>
                     <Link to='/skills'><p className='ml-1 px-1  h-8'> Skills </p></Link>
                     <Link to='/projects'><p className='ml-1 px-1  h-8'> Projects </p></Link>
                 </div>

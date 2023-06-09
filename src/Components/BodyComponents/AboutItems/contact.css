@@ -1,0 +1,9 @@
+
+.contact{
+    box-shadow:-4px 8px  8px 8px  rgb(27, 27, 27);
+}
+
+.contactext{
+    background: linear-gradient(107.85deg, rgba(124, 121, 121, 0.4) -144.58%, rgba(228, 226, 226, 0.27922) -144.58%, rgba(129, 21, 97, 0) 104.83%);
+    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.7);   
+}
