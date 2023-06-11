@@ -3,3 +3,27 @@
      box-shadow:-4px -4px  8px 8px  rgb(27, 27, 27) ; 
 }
 
+.anim_text{
+     animation: typing 3s steps(10) infinite;
+ } 
+
+ @keyframes typing {
+     100%{
+         color: rgb(188, 223, 223);
+     }
+     80%{
+         color: rgb(212, 223, 223);
+     }
+     60%{
+         color: rgb(230, 233, 233);
+     }
+     40%{
+         color: rgb(228, 228, 228);
+     }
+     20%{
+         color: white;
+     }
+     0%{
+         color: white;
+ }
+ }
