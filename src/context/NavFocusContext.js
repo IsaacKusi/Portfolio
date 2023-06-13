@@ -39,7 +39,7 @@ export const NavfocusProvider = ({ children }) => {
     }
 
     const aboutFocusHandler = () => {
-        dispatch({ type: 'aboutActive', payload:'foc-color'})
+        dispatch({ type: 'aboutActive', payload:'foc-color'}, )
         dispatch({ type: 'skillActive', payload:null})
         dispatch({ type: 'projectActive', payload:null})
         dispatch({type:'homeActive', payload:null})
