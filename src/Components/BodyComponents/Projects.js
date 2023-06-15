@@ -1,7 +1,11 @@
 
-const Projects = ()=>{
+const Projects = () => {
     return <>
-     <p className="container mt-11 py-12">Add projects here</p>
+        <main className="container mt-11 py-12 text-white">
+            <p>Aya Employee Management System</p>
+            <p>Sales Record App</p>
+            <p>Ecommerce app</p>
+        </main>
     </>
 }
 
