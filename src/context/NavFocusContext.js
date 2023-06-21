@@ -1,6 +1,7 @@
 
 import { createContext } from "react";
 import { useReducer, useEffect } from "react";
+//import { useLocation } from "react-router-dom";
 
 const NavFocusContext = createContext({})
 
@@ -25,6 +26,10 @@ export const NavfocusProvider = ({ children }) => {
     }
 
     const [state, dispatch] = useReducer(reducer, initialStates)
+    //const location = useLocation()
+
+    // const path = location.pathname
+    // console.log(path)
 
     const homeFocusHandler = ()=>{
         dispatch({type:'homeActive', payload:'foc-home'})
@@ -34,8 +39,7 @@ export const NavfocusProvider = ({ children }) => {
         localStorage.setItem('homeStore', JSON.stringify('foc-home'))
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('skillStore')
-        localStorage.removeItem('projectStore')
-        console.log(window.location.href)
+        localStorage.removeItem('projectStore') 
     }
 
     const aboutFocusHandler = () => {
@@ -47,7 +51,7 @@ export const NavfocusProvider = ({ children }) => {
         localStorage.removeItem('homeStore')
         localStorage.removeItem('skillStore')
         localStorage.removeItem('projectStore')
-        console.log(window.location.href)
+        
     }
 
     const skillFocusHandler = () => {
@@ -59,7 +63,6 @@ export const NavfocusProvider = ({ children }) => {
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('homeStore')
         localStorage.removeItem('projectStore')
-        console.log(window.location.href)
     }
 
     const projectFocusHandler = () => {
@@ -71,7 +74,7 @@ export const NavfocusProvider = ({ children }) => {
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('skillStore')
         localStorage.removeItem('homeStore')
-        console.log(window.location.href)
+        
     }
 
     useEffect(()=>{

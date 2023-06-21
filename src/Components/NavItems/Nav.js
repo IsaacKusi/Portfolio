@@ -1,5 +1,5 @@
 import logo from '../images/IKe.jpg'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa'
 import { useState} from 'react';
 import { useContext } from 'react';
@@ -27,8 +27,8 @@ const Nav = () => {
                 </div>
                 <FaBars className='text-white  font-semibold mt-3 md:hidden text-xl w-15 cursor-pointer' onClick={()=>setShowModal(!showModal)} />
             </div>
-            {showModal && <div className=' container  flex place-content-end'>
-                <div className=' mod-cov ml-5 font-semibold mt-1 text-black text-center fixed z-30 bg-white rounded shadow-2xl md:hidden ' onClick={()=>setShowModal(!showModal)}>
+            {showModal && <div className=' container  flex place-content-end '>
+                <div className=' bg-white ml-1 font-semibold mt-1  text-black text-center fixed z-30  rounded shadow-2xl md:hidden ' onClick={()=>setShowModal(!showModal)}>
                     <Link to='/'> <p className='px-1 h-8 ' onClick={ homeFocusHandler}> Home </p></Link>
                     <Link to='/about'> <p className='ml-1 px-1  h-8' onClick={aboutFocusHandler}> About </p></Link>
                     <Link to='/skills'><p className='ml-1 px-1  h-8' onClick={skillFocusHandler}> Skills </p></Link>
@@ -39,4 +39,4 @@ const Nav = () => {
     </>
 }
 
-export default Nav; 
+export default withRouter (Nav); 

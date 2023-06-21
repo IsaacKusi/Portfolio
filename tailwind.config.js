@@ -15,7 +15,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '1rem',
+      padding: '3rem',
       maxWidth: '800px',
     },
   },
