@@ -1,6 +1,8 @@
 
 import { createContext } from "react";
 import { useReducer, useEffect } from "react";
+import { useRef} from 'react';
+import { useInView, useAnimation } from "framer-motion"
 //import { useLocation } from "react-router-dom";
 
 const NavFocusContext = createContext({})
@@ -84,9 +86,21 @@ export const NavfocusProvider = ({ children }) => {
       dispatch({type:'projectActive', payload:(JSON.parse(localStorage.getItem('projectStore')))})
     }, [])
 
+    const ref = useRef(null);
+
+    const isInView = useInView(ref, { once: true });
+    const mainControls = useAnimation();
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start('visible')
+        }
+    }, [isInView, mainControls])
+
     return <>
         <NavFocusContext.Provider value={{
-            state, dispatch, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler
+            state, dispatch, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler,
+            ref, mainControls
         }}>
             {children}
         </NavFocusContext.Provider>
