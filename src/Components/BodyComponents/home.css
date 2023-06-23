@@ -1,8 +1,4 @@
 
-.home-animation{
-    height: 100vh;
-}
-
 @keyframes pulse-animation {
     0% {
         background: linear-gradient(-20deg,orange 10%,black 90%);

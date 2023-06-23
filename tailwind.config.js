@@ -11,7 +11,7 @@ module.exports = {
        },
        animation: {
         wiggle: 'wiggle 3s ease-in-out infinite',
-       }
+       },
     },
     container: {
       center: true,
