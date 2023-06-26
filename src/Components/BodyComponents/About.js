@@ -19,7 +19,7 @@ const About = () => {
     return <>
         <main className="bg-[#2a2b36] h-screen overflow-x-hidden" ref={ref} >
             <div className="container py-10">
-                <div className="about p-4  mt-20  text-white leading-7 rounded  flex flex-col  md:flex-row md:skew-x-6 md:skew-y-3">
+                <div className="about p-4  mt-20  text-white leading-7 rounded-2xl  flex flex-col  md:flex-row ">
                     <motion.div
                         variants={{
                             hidden: { opacity: 0, y: -40 },
@@ -29,7 +29,7 @@ const About = () => {
                         animate={mainControls}
                         exit={{ opacity: 0, y: -40 }}
                         transition={{ duration: 2, delay: 0.2 }}
-                        className='inline flex place-content-center my-2 md:my-0 md:place-content-start md:w-screen'> <img src={image} alt="sample.png" className='md:animate-wiggle rounded-full w-60 h-45 md:rounded-3xl md:w-67 md:h-50 ' />
+                        className='inline flex place-content-center my-2 md:my-0 md:place-content-start '> <img src={image} alt="sample.png" className='md:animate-wiggle rounded-full w-60 h-45 md:rounded-3xl md:w-[200vw] lg:w-screen ' />
                     </motion.div>
                     <div className='ml-2 text-md font-sans text-justify'>
                         <span className='font-bold'>I am a Fullstack Developer based in Ghana</span>. <span className='text-semibold'>I aim to create efficient and innovative solutions
@@ -54,7 +54,18 @@ const About = () => {
                     </div>
                 </div>
                 <div>
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, x: -600 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    exit={{ opacity: 0, x: -600 }}
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                >
                     <Contacts />
+                </motion.div>
                 </div>
             </div>
         </main>
