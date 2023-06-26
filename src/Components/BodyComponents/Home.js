@@ -34,7 +34,7 @@ const Home = () => {
                                 transition={{ duration: 0.9, delay: 0.2 }}
                             >
                                 <div>
-                                    <p className='text-[#64F4AC] text-[1rem]  md:text-[1.3rem] font-bold font-mono mt-12'>Hi, my name is</p>
+                                    <p className='text-[#64F4AC] text-[1rem]  md:text-[1.3rem] font-bold font-mono mt-20'>Hi, my name is</p>
                                     <p className='text-white mt-6 text-xl font-mono  md:text-4xl lg:text-6xl' >Isaac Kusi, <span className='mr-2 text-[#64F4AC] text-[1rem] lg:text-[1.5rem]'>a</span></p>
                                     <p className='text-white text-xl font-bold md:mt-2 lg:mt-4 font-mono md:text-4xl lg:text-6xl'>
                                         SOFTWARE DEVELOPER,
@@ -55,7 +55,8 @@ const Home = () => {
                                 exit={{ opacity: 0, x: 600 }}
                                 transition={{ duration: 0.9, delay: 0.2 }}
                             >
-                                <p className='text-white md:text-2xl text-xl font-mono '>Experience
+                                <p className='text-white md:text-2xl text-xl font-mono '>Experience 
+                                (<span className='text-[1rem]'>years</span>)
                                     <span className='text-[#64F4AC] border border-[#64F4AC] ml-2 rounded-full p-2'>2+</span></p>
                                 <p className='text-[#64F4AC] font-mono border border-[#64F4AC] mt-4 w-32 flex place-content-center rounded-lg'>
                                     <a href='mailto:kusiisaacimpact@yahoo.com'> Contact Me !! </a>
