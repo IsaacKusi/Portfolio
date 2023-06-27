@@ -1,16 +1,14 @@
 
 import { createContext } from "react";
-import { useReducer, useEffect } from "react";
-import { useRef} from 'react';
-import { useInView, useAnimation } from "framer-motion"
-//import { useLocation } from "react-router-dom";
+import { useReducer, useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 
 const NavFocusContext = createContext({})
 
 export const NavfocusProvider = ({ children }) => {
 
     const initialStates = {
-        homeActive:null,
+        homeActive: null,
         aboutActive: null,
         skillActive: null,
         projectActive: null,
@@ -18,7 +16,7 @@ export const NavfocusProvider = ({ children }) => {
 
     const reducer = (state, action) => {
         switch (action.type) {
-            case 'homeActive' : return {...state, homeActive: action.payload}
+            case 'homeActive': return { ...state, homeActive: action.payload }
             case 'aboutActive': return { ...state, aboutActive: action.payload }
             case 'skillActive': return { ...state, skillActive: action.payload }
             case 'projectActive': return { ...state, projectActive: action.payload }
@@ -28,79 +26,81 @@ export const NavfocusProvider = ({ children }) => {
     }
 
     const [state, dispatch] = useReducer(reducer, initialStates)
-    //const location = useLocation()
+    const [locPath, setLocPath] = useState('')
+    const location = useLocation()
 
-    // const path = location.pathname
-    // console.log(path)
+    useEffect(() => {
+        setLocPath(location.pathname)
+    }, [location.pathname])
 
-    const homeFocusHandler = ()=>{
-        dispatch({type:'homeActive', payload:'foc-home'})
-        dispatch({ type: 'aboutActive', payload: null})
-        dispatch({ type: 'skillActive', payload:null})
-        dispatch({ type: 'projectActive', payload:null})
+    const homeFocusHandler = useCallback(() => {
+        dispatch({ type: 'homeActive', payload: 'foc-home' })
+        dispatch({ type: 'aboutActive', payload: null })
+        dispatch({ type: 'skillActive', payload: null })
+        dispatch({ type: 'projectActive', payload: null })
         localStorage.setItem('homeStore', JSON.stringify('foc-home'))
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('skillStore')
-        localStorage.removeItem('projectStore') 
-    }
+        localStorage.removeItem('projectStore')
 
-    const aboutFocusHandler = () => {
-        dispatch({ type: 'aboutActive', payload:'foc-color'}, )
-        dispatch({ type: 'skillActive', payload:null})
-        dispatch({ type: 'projectActive', payload:null})
-        dispatch({type:'homeActive', payload:null})
+    }, [])
+
+    const aboutFocusHandler = useCallback(() => {
+        dispatch({ type: 'aboutActive', payload: 'foc-color' },)
+        dispatch({ type: 'skillActive', payload: null })
+        dispatch({ type: 'projectActive', payload: null })
+        dispatch({ type: 'homeActive', payload: null })
         localStorage.setItem('aboutStore', JSON.stringify('foc-color'))
         localStorage.removeItem('homeStore')
         localStorage.removeItem('skillStore')
         localStorage.removeItem('projectStore')
-        
-    }
+    }, [])
 
-    const skillFocusHandler = () => {
-        dispatch({ type: 'skillActive', payload:'foc-color'})
-        dispatch({ type: 'aboutActive', payload:null})
-        dispatch({ type: 'projectActive', payload:null})
-        dispatch({type:'homeActive', payload:null})
+    const skillFocusHandler = useCallback(() => {
+        dispatch({ type: 'skillActive', payload: 'foc-color' })
+        dispatch({ type: 'aboutActive', payload: null })
+        dispatch({ type: 'projectActive', payload: null })
+        dispatch({ type: 'homeActive', payload: null })
         localStorage.setItem('skillStore', JSON.stringify('foc-color'))
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('homeStore')
-        localStorage.removeItem('projectStore')
-    }
+        localStorage.removeItem('projectStore') 
+    }, [])
 
-    const projectFocusHandler = () => {
-        dispatch({ type: 'projectActive', payload:'foc-color'})
-        dispatch({ type: 'skillActive', payload:null})
-        dispatch({ type: 'aboutActive', payload:null})
-        dispatch({type:'homeActive', payload:null})
+    const projectFocusHandler = useCallback(() => {
+        dispatch({ type: 'projectActive', payload: 'foc-color' })
+        dispatch({ type: 'skillActive', payload: null })
+        dispatch({ type: 'aboutActive', payload: null })
+        dispatch({ type: 'homeActive', payload: null })
         localStorage.setItem('projectStore', JSON.stringify('foc-color'))
         localStorage.removeItem('aboutStore')
         localStorage.removeItem('skillStore')
         localStorage.removeItem('homeStore')
-        
-    }
 
-    useEffect(()=>{
-      dispatch({type:'homeActive', payload:(JSON.parse(localStorage.getItem('homeStore')))})
-      dispatch({type:'aboutActive', payload:(JSON.parse(localStorage.getItem('aboutStore')))})
-      dispatch({type:'skillActive', payload:(JSON.parse(localStorage.getItem('skillStore')))})
-      dispatch({type:'projectActive', payload:(JSON.parse(localStorage.getItem('projectStore')))})
     }, [])
 
-    const ref = useRef(null);
-
-    const isInView = useInView(ref, { once: true });
-    const mainControls = useAnimation();
+    useEffect(() => {
+        if (locPath === '/') {
+            homeFocusHandler()
+        } else if (locPath === '/about') {
+            aboutFocusHandler()
+        } else if (locPath === '/skills') {
+            skillFocusHandler()
+        } else if (locPath === '/projects') {
+            projectFocusHandler()
+        }
+    }, [locPath, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler])
 
     useEffect(() => {
-        if (isInView) {
-            mainControls.start('visible')
-        }
-    }, [isInView, mainControls])
+        dispatch({ type: 'homeActive', payload: (JSON.parse(localStorage.getItem('homeStore'))) })
+        dispatch({ type: 'aboutActive', payload: (JSON.parse(localStorage.getItem('aboutStore'))) })
+        dispatch({ type: 'skillActive', payload: (JSON.parse(localStorage.getItem('skillStore'))) })
+        dispatch({ type: 'projectActive', payload: (JSON.parse(localStorage.getItem('projectStore'))) })
+    }, [])
 
     return <>
         <NavFocusContext.Provider value={{
-            state, dispatch, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler,
-            ref, mainControls
+            state, dispatch, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler
         }}>
             {children}
         </NavFocusContext.Provider>

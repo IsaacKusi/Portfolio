@@ -54,18 +54,18 @@ const About = () => {
                     </div>
                 </div>
                 <div>
-                <motion.div
-                    variants={{
-                        hidden: { opacity: 0, x: -600 },
-                        visible: { opacity: 1, x: 0 }
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    exit={{ opacity: 0, x: -600 }}
-                    transition={{ duration: 0.9, delay: 0.2 }}
-                >
-                    <Contacts />
-                </motion.div>
+                    <motion.div
+                        variants={{
+                            hidden: { opacity: 0, x: -600 },
+                            visible: { opacity: 1, x: 0 }
+                        }}
+                        initial={'hidden'}
+                        animate={mainControls}
+                        exit={{ opacity: 0, x: -600 }}
+                        transition={{ duration: 0.9, delay: 0.2 }}
+                    >
+                        <Contacts />
+                    </motion.div>
                 </div>
             </div>
         </main>
