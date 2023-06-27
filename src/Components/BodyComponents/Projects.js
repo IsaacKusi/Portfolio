@@ -9,11 +9,11 @@ const Projects = () => {
         <main className="container mt-20 py-12 text-white overflow-x-hidden">
             <h1 className=" text-[1.3rem] md:text-[1.5rem] font-mono">Latest Projects</h1>
             <p className=" text-sm md:text-[1rem] text-[grey] font-mono">ideal solutions for a digital Experience</p>
-            <AyaEMS/>
-            <SalesRecordApp/>
-            <NetFlix/>
-            <Music/>
-             <EndNotes/>
+            <AyaEMS />
+            <SalesRecordApp />
+            <NetFlix />
+            <Music />
+            <EndNotes />
         </main>
     </>
 }

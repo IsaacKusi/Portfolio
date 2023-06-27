@@ -55,8 +55,8 @@ const Home = () => {
                                 exit={{ opacity: 0, x: 600 }}
                                 transition={{ duration: 0.9, delay: 0.2 }}
                             >
-                                <p className='text-white md:text-2xl text-xl font-mono '>Experience 
-                                (<span className='text-[1rem]'>years</span>)
+                                <p className='text-white md:text-2xl text-xl font-mono '>Experience
+                                    (<span className='text-[1rem]'>years</span>)
                                     <span className='text-[#64F4AC] border border-[#64F4AC] ml-2 rounded-full p-2'>2+</span></p>
                                 <p className='text-[#64F4AC] font-mono border border-[#64F4AC] mt-4 w-32 flex place-content-center rounded-lg'>
                                     <a href='mailto:kusiisaacimpact@yahoo.com'> Contact Me !! </a>
@@ -65,18 +65,18 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='flex items-center'>
-                         <motion.div
-                                variants={{
-                                    hidden: { opacity: 0, y: -200 },
-                                    visible: { opacity: 1, y: 0 }
-                                }}
-                                initial={'hidden'}
-                                animate={mainControls}
-                                exit={{ opacity: 0, y: -200 }}
-                                transition={{ duration: 0.9, delay: 0.2 }}
-                            >
-                    <img src={ReactNode} alt="react.png"  className='h-72 w-72 max-[478px]:hidden lg:h-96 lg:w-96 '/>
-                    </motion.div>
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: -200 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            initial={'hidden'}
+                            animate={mainControls}
+                            exit={{ opacity: 0, y: -200 }}
+                            transition={{ duration: 0.9, delay: 0.2 }}
+                        >
+                            <img src={ReactNode} alt="react.png" className='h-72 w-72 max-[478px]:hidden lg:h-96 lg:w-96 ' />
+                        </motion.div>
                     </div>
                 </div>
             </div>

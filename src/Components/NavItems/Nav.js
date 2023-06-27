@@ -1,8 +1,7 @@
 import logo from '../images/IKe.jpg'
 import { Link, withRouter } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa'
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import NavFocusContext from '../../context/NavFocusContext';
 import './nav.css'
 
@@ -10,6 +9,8 @@ import './nav.css'
 const Nav = () => {
     const [showModal, setShowModal] = useState(false)
     const { state, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler } = useContext(NavFocusContext)
+
+    
 
 
     return <>
@@ -29,7 +30,7 @@ const Nav = () => {
             </div>
             {showModal && <div className=' container  flex place-content-end '>
                 <div className=' bg-white ml-1 font-semibold mt-1  text-black text-center fixed z-30  rounded shadow-2xl md:hidden ' onClick={() => setShowModal(!showModal)}>
-                    <Link to='/'> <p className='px-1 h-8 ' onClick={homeFocusHandler}> Home </p></Link>
+                    <Link to='/'> <p className='px-1 h-8 ' onClick={homeFocusHandler} > Home </p></Link>
                     <Link to='/about'> <p className='ml-1 px-1  h-8' onClick={aboutFocusHandler}> About </p></Link>
                     <Link to='/skills'><p className='ml-1 px-1  h-8' onClick={skillFocusHandler}> Skills </p></Link>
                     <Link to='/projects'><p className='ml-1 px-1  h-8' onClick={projectFocusHandler} > Projects </p></Link>
