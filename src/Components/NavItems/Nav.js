@@ -10,11 +10,8 @@ const Nav = () => {
     const [showModal, setShowModal] = useState(false)
     const { state, aboutFocusHandler, skillFocusHandler, projectFocusHandler, homeFocusHandler } = useContext(NavFocusContext)
 
-    
-
-
     return <>
-        <main className="bg-transparent fixed top-5 left-0 right-0">
+        <main className=" bg-[transparent] fixed top-5 left-0 right-0">
             <div className="container flex justify-between">
                 <div className='flex items-center mt-1'>
                     <img src={logo} alt="" width='40px' height='40px' className='rounded-3xl' />

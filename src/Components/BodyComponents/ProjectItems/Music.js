@@ -45,7 +45,7 @@ const Music = () => {
                     <p>Framer-Motion</p>
                 </div>
                 <div className="mt-4 flex row  max-[1024px]:hidden">
-                    <FiGithub />
+                <a href="https://github.com/IsaacKusi/music_player_react"> <FiGithub /> </a>
                     <HiOutlineLink className="ml-5" />
                 </div>
             </div>
@@ -56,7 +56,7 @@ const Music = () => {
                 <p>Framer-Motion</p>
             </div>
             <div className="mt-4 flex row font-bold min-[1024px]:hidden">
-                <FiGithub />
+              <a href="https://github.com/IsaacKusi/music_player_react"> <FiGithub /> </a> 
                 <HiOutlineLink className="ml-5" />
             </div>
         </main>
