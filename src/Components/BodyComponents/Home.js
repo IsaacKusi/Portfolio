@@ -35,12 +35,12 @@ const Home = () => {
                             >
                                 <div>
                                     <p className='text-[#64F4AC] text-[1rem]  md:text-[1.3rem] font-bold font-mono mt-20'>Hi, my name is</p>
-                                    <p className='text-white mt-6 text-xl font-mono  md:text-4xl lg:text-6xl' >Isaac Kusi, <span className='mr-2 text-[#64F4AC] text-[1rem] lg:text-[1.5rem]'>a</span></p>
-                                    <p className='text-white text-xl font-bold md:mt-2 lg:mt-4 font-mono md:text-4xl lg:text-6xl'>
+                                    <p className='text-white mt-6 text-xl font-sans  md:text-4xl lg:text-6xl' >Isaac Kusi, <span className='mr-2 text-[#64F4AC] text-[1rem] lg:text-[1.5rem]'>a</span></p>
+                                    <p className='text-white text-xl font-bold md:mt-2 lg:mt-4 font-sans md:text-4xl lg:text-6xl'>
                                         SOFTWARE DEVELOPER,
                                     </p>
-                                    <p className='text-white md:mt-2 lg:mt-6 text-md md:text-xl lg:text-3xl font-mono '>who has a penchant in turning ideas</p>
-                                    <p className='text-white md:mt-2 lg:mt-6 text-md md:text-xl lg:text-3xl font-mono '>into real life <span className='text-[#64F4AC]'>Products.</span></p>
+                                    <p className='text-white md:mt-2 lg:mt-6 text-md md:text-xl lg:text-3xl font-sans '>who has a penchant in turning ideas</p>
+                                    <p className='text-white md:mt-2 lg:mt-6 text-md md:text-xl lg:text-3xl font-sans '>into real life <span className='text-[#64F4AC] font-mono'>Products.</span></p>
                                 </div>
                             </motion.div>
                         </div>
